@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio – Mouneesh Sathyanarayanan</title>
+  <style>
+    :root {
+      --bg: #fff9f2;              
+      --card: #ffeefd;             
+      --ink: #1f2937;            
+      --muted: #6b7280;            
+      --ring: #e5e7eb;             
+      --accent: #9333ea;           
+      --radius: 18px;
+      --shadow: 0 8px 24px rgba(0,0,0,.06);
+    }
+
+    /* CSS Reset-ish */
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--ring);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 96px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      letter-spacing: 1px;
+      font-size: clamp(28px, 3.2vw, 40px);
+      font-weight: 800;
+    }
+
+    /* Bio Row */
+    .bio-row {
+      display: flex;
+      flex-wrap: wrap;             
+      align-items: center;
+      gap: 24px;
+      padding: 24px 0;
+    }
+
+    .bio-card {
+      flex: 1 1 380px;             
+      background: white;
+      border: 1px solid var(--ring);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      box-shadow: var(--shadow);
+      min-width: 280px;
+    }
+
+    .bio-card h4 {
+      margin: 6px 0 2px;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .bio-card .rule {
+      height: 1px; background: var(--ring); border: 0; margin: 4px 0 10px;
+      width: 100%; max-width: 360px;
+    }
+
+    .avatar {
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      border: 4px solid #333;
+      box-shadow: var(--shadow);
+    }
+
+    .avatar-wrap {
+      flex: 0 1 180px;             
+      display: flex; align-items: center; justify-content: center;
+    }
+
+   
+    .section {
+      margin-top: 8px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--ring);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .section-title {
+      font-weight: 800;
+      margin: 0;
+      font-size: clamp(18px, 2.4vw, 22px);
+    }
+
+    .pill {
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(147, 51, 234, 0.08);
+      color: var(--accent);
+      border: 1px dashed currentColor;
+    }
+
+
+    .about-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .about-box {
+      flex: 1 1 420px;
+      border: 1px solid var(--ring);
+      border-radius: calc(var(--radius) - 4px);
+      padding: 16px 18px;
+      min-width: 280px;
+      background: #fff;
+    }
+
+    .about-box p:first-child {
+      text-align: center;
+      font-weight: 700;
+      margin: 0 0 8px;
+    }
+
+   
+    .triple {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .triple .tile {
+      flex: 1 1 300px;
+      min-width: 260px;
+      border: 1px solid var(--ring);
+      border-radius: calc(var(--radius) - 6px);
+      background: #fff;
+      padding: 16px 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .tile h3 {
+      margin: 0 0 8px;
+      text-align: center;
+      font-size: 16px;
+      letter-spacing: .3px;
+    }
+
+    ul { margin: 0; padding-left: 18px; }
+    li { margin: 4px 0; }
+
+    footer {
+      background: var(--card);
+      border-top: 1px solid var(--ring);
+      margin-top: 28px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 72px;
+      text-align: center;
+      padding: 8px 0;
+      font-size: 15px;
+    }
+
+    .footer-inner a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .footer-inner a:hover { text-decoration: underline; }
+
+   
+    @media (max-width: 380px) {
+      .avatar { width: 128px; height: 128px; }
+      .bio-card { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <h1>PORTFOLIO</h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Bio Row -->
+    <section class="bio-row">
+      <div class="bio-card">
+        <h4>NAME: MOUNEESH SATHYANARAYANAN</h4>
+        <hr class="rule" />
+        <h4>REGISTER NUMBER: 43130266</h4>
+        <hr class="rule" />
+        <h4>DEPARTMENT: BE ECE</h4>
+        <hr class="rule" />
+        <h4>UNIVERSITY: SATHYABAMA UNIVERSITY</h4>
+      </div>
+      <div class="avatar-wrap">
+        <img src="me.jpg" alt="Profile photo of Mouneesh" class="avatar" />
+      </div>
+    </section>
+
+   
+    <section class="section card">
+      <div class="section-header">
+        <h2 class="section-title">About Schooling</h2>
+        <span class="pill">Overview</span>
+      </div>
+
+      <div class="about-grid">
+        <article class="about-box">
+          <p>ABOUT 10TH</p>
+          <p>
+            During my 10th grade at Zion, I was part of the Computer Science group, where I was introduced to the fundamentals of programming and logical thinking. This phase was crucial in developing my analytical skills and understanding the role of technology in problem‑solving. Along with academics, I actively participated in school activities that enhanced my teamwork and leadership abilities. The strong academic foundation and disciplined environment helped me build confidence and a clear vision for my future studies.
+          </p>
+        </article>
+        <article class="about-box">
+          <p>ABOUT 12TH</p>
+          <p>
+            In my 12th grade, I pursued a specialized curriculum that deepened my knowledge in science and technology. This phase was more challenging and required a higher level of dedication, helping me develop a strong work ethic and time‑management skills. I explored advanced concepts in my subjects, which strengthened my passion for engineering. The guidance from my teachers and the competitive environment motivated me to push my limits, preparing me for higher education and future career opportunities.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="triple">
+      <div class="tile">
+        <h3>TECHNICAL SKILLS</h3>
+        <ul>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>Python</li>
+          <li>C &amp; C++</li>
+          <li>MATLAB</li>
+        </ul>
+      </div>
+
+      <div class="tile">
+        <h3>HOBBIES</h3>
+        <ul>
+          <li>Playing Guitar</li>
+          <li>Drawing</li>
+          <li>Playing Chess</li>
+          <li>Listening to Music</li>
+          <li>Playing Cricket</li>
+          <li>Playing Football</li>
+          <li>Playing Badminton</li>
+        </ul>
+      </div>
+
+      <div class="tile">
+        <h3>EXTRACURRICULAR ACTIVITIES</h3>
+        <ul>
+          <li>Participated in coding competitions</li>
+          <li>Volunteered for social initiatives</li>
+          <li>Played in school sports teams</li>
+          <li>Attended technical workshops</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>
+        Contact:
+        <a href="mailto:yourname@example.com">yourname@example.com</a>
+        &nbsp;|
+        <a href="tel:+1234567890">+1&nbsp;234&nbsp;567&nbsp;890</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
