@@ -1,0 +1,55 @@
+package nov25;
+
+public class Joinfn {
+
+	public static void main(String[] args) {
+		// Create thread objects
+        Task1 task1 = new Task1();
+        Task2 task2 = new Task2();
+
+        // Start threads simultaneously
+        task1.start();
+        task2.start();
+
+        try {
+            // Wait for thread 1 to finish
+            task1.join();
+            // Wait for thread 2 to finish
+            task2.join();
+        } catch (InterruptedException e) {
+            System.out.println("Main thread interrupted");
+        }
+
+        // This will print after both threads have completed
+        System.out.println("Both threads have finished execution.");
+
+	}
+
+}
+class Task1 extends Thread {
+    public void run() {
+        try {
+            for (int i = 1; i <= 3; i++) {
+                System.out.println("Task 1: " + i);
+                Thread.sleep(1000); // Pause 1 second
+            }
+        } catch (InterruptedException e) {
+            System.out.println("Task 1 interrupted");
+        }
+    }
+}
+
+// Thread 2 prints letters A to C
+class Task2 extends Thread {
+    public void run() {
+        try {
+            for (char c = 'A'; c <= 'C'; c++) {
+                System.out.println("Task 2: " + c);
+                Thread.sleep(1000); // Pause 1 second
+            }
+        } catch (InterruptedException e) {
+            System.out.println("Task 2 interrupted");
+        }
+    }
+}
+

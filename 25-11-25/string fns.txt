@@ -1,0 +1,59 @@
+public class StringMethodsDemo {
+    public static void main(String[] args) {
+        String s = " Hello World ";
+
+        // 1. toUpperCase()
+        System.out.println("toUpperCase(): " + s.toUpperCase());  // " HELLO WORLD "
+
+        // 2. toLowerCase()
+        System.out.println("toLowerCase(): " + s.toLowerCase());  // " hello world "
+
+        // 3. trim()
+        System.out.println("trim(): '" + s.trim() + "'");  // "Hello World"
+
+        // 4. No with() or without() in String class, ignoring.
+
+        // 5. charAt()
+        System.out.println("charAt(1): " + s.charAt(1));   // 'H' (indexing starts at 0, but s has leading space, so index 1 is 'H')
+
+        // 6. length()
+        System.out.println("length(): " + s.length());     // 12
+
+        // 7. intern()
+        String s1 = new String("hello");
+        String s2 = s1.intern();
+        String s3 = "hello";
+        System.out.println("intern(): s2 == s3 ? " + (s2 == s3));  // true
+
+        // 8. valueOf()
+        int num = 123;
+        System.out.println("valueOf(int): " + String.valueOf(num));  // "123"
+        boolean flag = true;
+        System.out.println("valueOf(boolean): " + String.valueOf(flag));  // "true"
+
+        // 9. replace()
+        System.out.println("replace('l','p'): " + s.replace('l', 'p'));  // " Heppo Worpd "
+
+        // 10. concat()
+        System.out.println("concat(\"!!!\"): " + s.concat("!!!"));  // " Hello World !!!"
+
+        // 11. equals()
+        String s4 = " Hello World ";
+        String s5 = " hello world ";
+        System.out.println("equals(s4): " + s.equals(s4));       // true (exact case and spaces)
+        System.out.println("equals(s5): " + s.equals(s5));       // false (case difference)
+
+        // 12. '==' operator (compare references)
+        String s6 = "Hello";
+        String s7 = new String("Hello");
+        System.out.println("== operator (s6 == s7): " + (s6 == s7));   // false (different objects)
+        System.out.println("equals() (s6.equals(s7)): " + s6.equals(s7)); // true
+
+        // 13. compareTo()
+        String c1 = "apple";
+        String c2 = "banana";
+        System.out.println("compareTo(): " + c1.compareTo(c2));   // Negative (apple < banana)
+        System.out.println("compareTo(): " + c2.compareTo(c1));   // Positive (banana > apple)
+        System.out.println("compareTo(): " + c1.compareTo("apple")); // 0 (equal)
+    }
+}
