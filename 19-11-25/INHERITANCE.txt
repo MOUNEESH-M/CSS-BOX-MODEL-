@@ -1,0 +1,76 @@
+SINGLE INHERTITANCE:
+class grandfather {
+    void oldbike () {
+        System.out.println("Splender");
+    }
+}
+class father extends grandfather {  
+    void bike () {
+        System.out.println("Discover");
+    }
+}
+public class main {
+    public static void main(String[] args) {
+        father obj = new father();
+        obj.bike();
+        obj.oldbike ();
+    }
+}
+
+MULTILEVEL INHERITANCE:
+public class inheritence {
+	public static void main(String[] args){
+		son1 s1 = new son1();
+		s1.bike();
+		son2 s2 = new son2();
+		s2.oldbike();
+		s2.bike();
+	}
+}
+class grandfather{
+	void oldbike(){
+		System.out.println("Classic Bullet");
+	}
+}
+class father extends grandfather{
+	void oldbike(){
+		System.out.println("Splender");
+	}
+}
+class son1 extends father{
+	void bike(){
+		System.out.println("R15");
+	}
+}
+class son2 extends father{
+	void bike(){
+		System.out.println("Harley-davidsonn");
+	}
+}
+HEIRARCHICAL INHERITANCE:
+class father {
+    void property () {
+        System.out.println("Family Property");
+    }
+}
+
+class son1 extends father {
+    void bike1() {
+        System.out.println("R15");
+    }
+}
+class son2 extends father {
+    void bike2() {
+        System.out.println("Harley-Davidson");
+    }
+}
+public class main {
+    public static void main (String [] args) {
+        son1 c1 = new son1();
+        c1. Property ();
+        c1. bike1 ();
+        son2 c2 = new son2();
+        c2. Property ();
+        c2. bike2 ();
+    }
+}
