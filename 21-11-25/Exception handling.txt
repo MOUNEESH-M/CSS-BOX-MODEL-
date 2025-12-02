@@ -1,0 +1,30 @@
+package class2111;
+import java.util.Scanner;
+public class Exception {
+
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		
+		int a=s.nextInt();
+		int b=s.nextInt();
+		int c[]={1,2,3,4,5};
+		System.out.println(c.length);
+		int d=s.nextInt();
+		int f[]={};
+		try{
+			System.out.println(a/b);
+			System.out.println(c[d]);
+			System.out.println(f[d]);
+		}
+		catch(ArithmeticException e){
+			System.out.println(e);
+		}
+		catch(ArrayIndexOutOfBoundsException i){
+			System.out.println("out of bounce "+i);
+		}
+		catch(NullPointerException n){
+			System.out.println("Null "+n);
+		}
+	}
+
+}
